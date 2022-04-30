@@ -22,11 +22,11 @@ Install all app dependencies.
 
 **npm install**
 
-Setup database
+Setup database under the section '# Databases'.
 
 **cp .env.example .env**
 
-Edit .env with your db credentials.
+Edit .env with your db credentials. Ensure the database you use here actually exist.
 
 Generate OAuth keys.
 

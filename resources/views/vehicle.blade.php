@@ -6,19 +6,20 @@
             <div class="col-md-12">
                 <div class="card">
                     @if (isset($errors) && $errors[0])
-                        <div class="card-header">
+                        <div class="card-header alert alert-warning" role="alert">
                             {{ __('A quote could not be generated due to the following reason(s)!')}}
                         </div>
-                        <div class="alert alert-warning alert-block">
-                            @foreach($errors as $message)
-                                <ul>
+                        <div class="card-body">
+                            <ul>
+                                @foreach($errors as $message)
                                     <li><strong>{{ $message }}</strong></li>
-                                </ul>
-                            @endforeach
+                                @endforeach
+                            </ul>
+                            <p>Try <a href="{{ Route('home') }}">again.</a> Maybe you entered incorrect details for your car?</p>
                         </div>
                     @else
                         <div id="quotation">
-                            <div class="card-header">
+                            <div class="card-header alert alert-success" role="alert">
                                 {{ __('Vehicle windscreen quotation: #') . $quote['ref'] }}
                             </div>
                             <form action="{{ Route('accept') }}" method="POST" class="col-lg-8">
