@@ -23,13 +23,14 @@ class QuotationsController extends Controller
             ];
             $carDetails = json_encode($carDetails);
             if (Quotations::where('reference', '=', $request['ref'])->exists() === FALSE) {
-                DB::insert('insert into quotations (reference, name, email, cost, store, details) values (?, ?, ?, ?, ?, ?)', [
+                DB::insert('insert into quotations (reference, name, email, cost, store, details, accepted) values (?, ?, ?, ?, ?, ?, ?)', [
                     $request['ref'],
                     $request['name'],
                     $request['email'],
                     $request['cost'],
                     $request['stores'],
                     $carDetails,
+                    'yes',
                 ]);
             }
             return view('accept', ['ref' => $request['ref']]);
@@ -37,69 +38,4 @@ class QuotationsController extends Controller
         return view('welcome');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Quotations  $quotations
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Quotations $quotations)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Quotations  $quotations
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Quotations $quotations)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Quotations  $quotations
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Quotations $quotations)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Quotations  $quotations
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Quotations $quotations)
-    {
-        //
-    }
 }

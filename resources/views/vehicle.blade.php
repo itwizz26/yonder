@@ -82,7 +82,7 @@
                                             <option value="">-- Select fitment center --</option>
                                             <option value="johannesburg" class="form-select">Johannesburg</option>
                                             <option value="durban" class="form-select">Durban</option>
-                                            <option value="tape town" class="form-select">Cape Town</option>
+                                            <option value="cape town" class="form-select">Cape Town</option>
                                             <option value="bloemfontein" class="form-select">Bloemfontein</option>
                                             <option value="tshwane" class="form-select">Tshwane</option>
                                             <option value="mafikeng" class="form-select">Mafikeng</option>

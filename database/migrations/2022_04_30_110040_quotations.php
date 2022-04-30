@@ -21,6 +21,7 @@ class Quotations extends Migration
             $table->string('cost');
             $table->string('store');
             $table->text('details')->nullable();
+            $table->string('accepted');
             $table->timestamps();
         });
     }
